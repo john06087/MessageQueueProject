@@ -1,0 +1,13 @@
+#忽略plugin.iml
+plugin.iml
+
+#忽略target資料夾
+target/
+
+#忽略開發用的設定
+.idea/
+.classpath
+.project
+.settings/org.eclipse.core.resources.prefs
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.m2e.core.prefs

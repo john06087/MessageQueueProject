@@ -1,0 +1,10 @@
+server:
+  port: 8090
+
+#本機未設定也可正常使用
+spring:
+  rabbitmq:
+    username: guest
+    password: guest
+#    host: 127.0.0.1
+#    port: 5672
