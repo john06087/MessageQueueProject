@@ -8,21 +8,29 @@
     <artifactId>Producer-Demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <!-- 1. 新增父工程，便於管理依賴 -->
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
-        <version>2.1.5.RELEASE</version>
+        <version>2.6.3</version>
     </parent>
-    <!-- 2. 新增web啟動器，完成自動配置 -->
+
     <dependencies>
+        <!-- SpringBoot Starter 引入檔 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- RabbitMQ 引入檔 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
+
+        <!-- Kafka 引入檔 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
     </dependencies>
 

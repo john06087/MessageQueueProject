@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 
 @Configuration
-public class RabbitMQDirectConfig {
+public class RabbitMQConfig {
 
     @Value("${spring.rabbitmq.username}")
     private String rabbitmqUsername;

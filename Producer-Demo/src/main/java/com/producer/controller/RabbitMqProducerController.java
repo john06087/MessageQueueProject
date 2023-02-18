@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/rabbitMqController/")
+@RequestMapping(value = "/rabbitMqProducerController/")
 public class RabbitMqProducerController {
 
         // 使用 RabbitAdmin 代替 AmqpTemplate，RabbitAdmin 有實做 initializingbean，啟動專案時會自動建立 Queue
