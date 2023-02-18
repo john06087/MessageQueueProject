@@ -54,15 +54,15 @@
 ![image](https://user-images.githubusercontent.com/47651623/218668088-75486517-5bda-4d23-ae29-a4b070bde001.png)
 ![image](https://user-images.githubusercontent.com/47651623/218668336-ecd95e5d-82a8-41c1-bedf-2291d499af27.png)
   * **下載完成後解壓縮放到自訂路徑**
-  * **將 C:\Program Files\apache-zookeeper-3.7.1-bin\conf 底下的 zoo_sample.cfg 文件更名為 zoo.cfg**
-![image](https://user-images.githubusercontent.com/47651623/218669061-845db41d-0c8d-46bd-9a46-39de03192e6a.png)
-  * **打開 zoo.cfg 找到並編輯 dataDir=C:/Program Files/apache-zookeeper-3.7.1-bin/tmp**
-  * **注意此處配置的路径一定是 "/" 而不是 "\\"，否則會啟動失敗**
-![image](https://user-images.githubusercontent.com/47651623/218670967-4eaf76ac-5a7b-4e57-a869-a955ab31a467.png)
+  * **將 D:\apache-zookeeper-3.7.1-bin\conf 底下的 zoo_sample.cfg 文件更名為 zoo.cfg**
+![image](https://user-images.githubusercontent.com/47651623/219850777-28e6f5e8-243b-4895-bbb2-15357fd02ce4.png)
+  * **打開 zoo.cfg 找到並編輯 dataDir=D:/apache-zookeeper-3.7.1-bin/tmp**
+  * **注意此處配置的路径一定是 "/" 而不是 "\\"，且路徑不可以有空白，否則會啟動失敗**
+![image](https://user-images.githubusercontent.com/47651623/219850996-c243b9fc-b067-4a58-bf28-575fce980658.png)
   * **設定環境變數，對 "環境變數 -> 系統變數" 點選新增** <br/>
 ![image](https://user-images.githubusercontent.com/47651623/217977281-b92de9cb-73bf-4abf-a408-6bdf7786c2e4.png)
   * **變數名稱設定: ZOOKEEPER_HOME，變數值為 Zookeeper 的安裝路徑** <br/>
-![image](https://user-images.githubusercontent.com/47651623/218944518-6e705f78-da62-4b33-b80d-643de503ef60.png)
+![image](https://user-images.githubusercontent.com/47651623/219851083-275c25bb-19a5-498b-a7d2-2bfa7a4aabe5.png)
   * **設定完成後，選擇系統變數 "Path" 進行編輯** <br/>
 ![image](https://user-images.githubusercontent.com/47651623/217977787-e3bb0946-99e0-428c-8022-5e24c9b1f07f.png)
   * **點選新增，並打上: %ZOOKEEPER_HOME%\bin，按下確定完成編輯** <br/>
@@ -80,7 +80,7 @@
   * **下載完畢後解壓縮到自訂目錄，目錄的資料夾路徑不可以有空格，否則執行一樣會有錯誤**
 ![image](https://user-images.githubusercontent.com/47651623/218952653-9abbd91d-47d9-4097-9a16-743dea6bb43b.png)
   * **修改設定 server.properties，路徑: D:\kafka_2.12-3.2.3\config\server.properties**
-  * **log.dirs=/tmp/kafka-logs –> log.dirs=自訂路徑/logs (一樣注意斜線方向"/")**
+  * **log.dirs=/tmp/kafka-logs –> log.dirs=D:/kafka_2.12-3.2.3/logs (一樣注意斜線方向"/")**
 ![image](https://user-images.githubusercontent.com/47651623/218958065-eeb8a5d8-8bd8-41a9-9ad4-ed99b742260c.png)
   * **啟動 Kafka**
   * **打開 Cmd 切換到 bin 目錄底下，輸入指令: .\windows\kafka-server-start.bat ..\config\server.properties**
@@ -93,10 +93,12 @@
 
 * **專案測試方式**
   * **先啟動 Producer 專案，後啟動 Consumer 專案，順序不可調換 (原因是 Producer 專案會先在 RabbitMq 建立 Queue)** <br/>
-  * **於網址列輸入: http://localhost:8090/rabbitMqController/sendMessage?exchangeName=direct-exchange&routingKey=admin&messageData=Test_RabbitMQ_Project** <br/>
+  * **於網址列輸入: http://localhost:8090/rabbitMqProducerController/sendMessage?exchangeName=direct-exchange&routingKey=admin&messageData=Test_RabbitMQ_Project** <br/>
   * **會看到 Consumer_Demo 的 Console 打印: Recieved Message From RabbitMQ: Test_RabbitMQ_Project，代表執行成功** <br/>
 ![image](https://user-images.githubusercontent.com/47651623/219844899-20c5d494-4305-40c9-8e63-6b20aa60b57c.png)
 
+
+http://localhost:8090/kafkaProducerController/sendMessage?message=Test_RabbitMQ_Project
 
 
 ## 參考資料 - references
