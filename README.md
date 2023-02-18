@@ -92,17 +92,10 @@
 ---
 
 * **專案測試方式**
-  * **先啟動 Producer 專案，後啟動 Consumer 專案，順序不可調換** <br/>
-  * **原因是 Producer 專案會先在 RabbitMq 建立 Queue** <br/>
+  * **先啟動 Producer 專案，後啟動 Consumer 專案，順序不可調換 (原因是 Producer 專案會先在 RabbitMq 建立 Queue)** <br/>
   * **於網址列輸入: http://localhost:8090/rabbitMqController/sendMessage?exchangeName=direct-exchange&routingKey=admin&messageData=Test_RabbitMQ_Project** <br/>
-  * **會看到專案的 Console 打印: Recieved Message From RabbitMQ: Test_RabbitMQ_Project，代表執行成功** <br/>
-![image](https://user-images.githubusercontent.com/47651623/217983295-ccf5b29d-a854-409e-a14f-f67cf18e1589.png)
-* **具體流程如下**
-  * **流程 (1 call API: javainuse-rabbitmq/direct/producer** <br/>
-  * **流程 (2 API 將訊息: Test RabbitMQ Project 塞入 direct-exchange (ProducerController.java)** <br/>
-  * **流程 (3 direct-exchange 將訊息轉交給 adminQueue** <br/>
-  * **流程 (4 監聽器 ConsumerController.java 察覺 adminQueue 有訊息，並且將它印出** <br/>
-![image](https://user-images.githubusercontent.com/47651623/217982279-0e10f266-ed5b-4bd6-a138-630a797e8ff3.png)
+  * **會看到 Consumer_Demo 的 Console 打印: Recieved Message From RabbitMQ: Test_RabbitMQ_Project，代表執行成功** <br/>
+![image](https://user-images.githubusercontent.com/47651623/219844899-20c5d494-4305-40c9-8e63-6b20aa60b57c.png)
 
 
 
