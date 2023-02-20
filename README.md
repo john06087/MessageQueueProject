@@ -116,3 +116,4 @@ http://localhost:8090/kafkaProducerController/sendMessage?message=Test_RabbitMQ_
 * [SpringBoot + RabbitMQ 範例](https://www.javainuse.com/messaging/rabbitmq/exchange "")
 * [Kafka 安装-1](https://blog.yowko.com/kafka-on-windows/ "")
 * [Kafka 安装-2](https://blog.csdn.net/qq_35461948/article/details/117772904 "")
+* [SpringBoot + Kafka 範例](https://www.tpisoftware.com/tpu/articleDetails/2518 "")
