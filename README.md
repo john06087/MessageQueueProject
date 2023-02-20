@@ -102,12 +102,14 @@
 ![image](https://user-images.githubusercontent.com/47651623/220006413-993fa48b-bc6d-4ee9-8473-36a07096c807.png)
 * **啟動專案**
   * **先啟動 Producer 專案，後啟動 Consumer 專案，順序不可調換 (原因是 RabbitMq 的 Queue 是由 Producer-Demo 的 rabbitAdmin 建立的)** <br/>
+* **測試 RabbitMQ**
   * **於網址列輸入: http://localhost:8090/rabbitMqProducerController/sendMessage?exchangeName=direct-exchange&routingKey=admin&messageData=Test_RabbitMQ_Project** <br/>
   * **會看到 Consumer_Demo 的 Console 打印: Recieved Message From RabbitMQ: Test_RabbitMQ_Project，代表執行成功** <br/>
-![image](https://user-images.githubusercontent.com/47651623/219844899-20c5d494-4305-40c9-8e63-6b20aa60b57c.png)
-
-
-http://localhost:8090/kafkaProducerController/sendMessage?message=Test_RabbitMQ_Project
+![image](https://user-images.githubusercontent.com/47651623/220046326-a42044e5-dc36-4408-a446-8d522e3f6603.png)
+* **測試 Kafka**
+  * **於網址列輸入: http://localhost:8090/kafkaProducerController/sendMessage?message=Test_Kafka_Project** <br/>
+  * **會看到 Consumer_Demo 的 Group_1、Group_2 皆打印: Test_Kafka_Project，代表執行成功** <br/>
+![image](https://user-images.githubusercontent.com/47651623/220046582-6b17742c-5dc1-4f24-9268-fa9b8c1d889f.png)
 
 
 ## 參考資料 - references
