@@ -2,12 +2,17 @@
 
 ## 檔案簡介 - introduction
 
-**ConsumerApplication.java** -> Consumer 專案啟動檔<br/>
-**RabbitMqConsumerController.java** -> RabbitMQ 相關的功能進入點<br/>
-<br/>
-**ProducerApplication.java** -> Producer 專案啟動檔<br/>
-**RabbitMqProducerController.java** -> RabbitMQ 相關的功能進入點<br/>
-**RabbitMQDirectConfig.java** -> RabbitMQ 設定檔<br/>
+* **Consumer-Demo Project**<br/>
+  * **ConsumerApplication.java** -> Consumer 專案啟動檔<br/>
+  * **RabbitMqConsumerService.java** -> RabbitMQ Message Listener<br/>
+  * **KafkaConsumerService.java** -> Kafka Message Listener<br/>
+  * **KafkaConfig.java** -> Kafka 設定檔<br/><br/>
+* **Producer-Demo Project**<br/>
+  * **ProducerApplication.java** -> Producer 專案啟動檔<br/>
+  * **RabbitMqProducerController.java** -> RabbitMQ 功能進入點<br/>
+  * **KafkaProducerController.java** -> Kafka 功能進入點<br/>
+  * **RabbitMQConfig.java** -> RabbitMQ 設定檔<br/>  
+  * **KafkaConfig.java** -> Kafka 設定檔<br/>
 
 ## 使用方法 - instruction
 > ### RabbitMQ 安裝 (如果已安裝請跳過)
@@ -48,7 +53,7 @@
 
 ---
 
-> ### Kafka 安裝
+> ### Kafka 安裝 (如果已安裝請跳過)
 * **安裝 Zookeeper**
   * **下載地址: https://zookeeper.apache.org/releases.html**
 ![image](https://user-images.githubusercontent.com/47651623/218668088-75486517-5bda-4d23-ae29-a4b070bde001.png)
@@ -91,8 +96,12 @@
 
 ---
 
-* **專案測試方式**
-  * **先啟動 Producer 專案，後啟動 Consumer 專案，順序不可調換 (原因是 Producer 專案會先在 RabbitMq 建立 Queue)** <br/>
+> ### 進行專案測試
+* **啟動 Kafka Server**
+  * **執行 Zookeeper & Kafka Server**
+![image](https://user-images.githubusercontent.com/47651623/220006413-993fa48b-bc6d-4ee9-8473-36a07096c807.png)
+* **啟動專案**
+  * **先啟動 Producer 專案，後啟動 Consumer 專案，順序不可調換 (原因是 RabbitMq 的 Queue 是由 Producer-Demo 的 rabbitAdmin 建立的)** <br/>
   * **於網址列輸入: http://localhost:8090/rabbitMqProducerController/sendMessage?exchangeName=direct-exchange&routingKey=admin&messageData=Test_RabbitMQ_Project** <br/>
   * **會看到 Consumer_Demo 的 Console 打印: Recieved Message From RabbitMQ: Test_RabbitMQ_Project，代表執行成功** <br/>
 ![image](https://user-images.githubusercontent.com/47651623/219844899-20c5d494-4305-40c9-8e63-6b20aa60b57c.png)
